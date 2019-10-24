@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import django.contrib.staticfiles
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -24,10 +25,10 @@ SECRET_KEY = 'dmh7i*r2o=w$_wic#8kw5s$f#z9e2o@+kr!h3*4bca687#v^u1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #my changes1
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*'] 
-
+ALLOWED_HOSTS = ['*']
+#ALLOWED_HOSTS = ['120.77.211.77', 'localhost', '0.0.0.0:8000', '127.0.0.1']
 
 # Application definition
 #my changes2
@@ -38,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'markdown_deux',
     'mainsite',
 ]
 
@@ -119,5 +121,9 @@ USE_TZ = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
-
+#my changes4
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+	os.path.join(BASE_DIR,'static'),
+]
+
